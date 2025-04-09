@@ -10,7 +10,6 @@
 }
 
 .searchField {
-  grid-column-start: 1;
   display: flex;
   font-size: 20px;
   border-radius: 500px;
@@ -20,10 +19,21 @@
   border: 1px solid gray;
   width: 560px;
   height: 80px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px 16px 24px;
+}
+.searchSuggestions {
+  position: absolute;
+  top: 180px;
+  left: 40px;
+  display: flex;
+  height: auto;
+  width: 400px;
+  background-color: white;
+  padding: 25px 24px 25px 80px;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 1000px;
+  z-index: 3;
 }
 
 .portrayDay {
