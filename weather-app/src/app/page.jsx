@@ -6,31 +6,35 @@ import axios from "axios";
 import { ShowDayTime } from "./components/ShowDayTime";
 import { ShowNightTime } from "./components/ShowNightTime";
 
-import styles from "@/app/styles/page.module.css";
-
 const HomePage = () => {
   const [cityName, setCityName] = useState("Ulan Bator");
+  const [weatherData, setWeatherData] = useState(null);
 
-  // useEffect(() => {
-  //   const weatherKey = process.env.WEATHERAPIKEY;
+  useEffect(() => {
+    const weatherKey = process.env.WEATHER_API_KEY;
 
-  //   const response = async () => {
-  //     try {
-  //       const { data } = await axios(
-  //         `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${cityName}`
-  //       );
-  //       console.log({ data });
-  //     } catch (error) {
-  //       console.error("api error: ", weatherKey);
-  //     }
-  //   };
-  //   response();
-  // }, []);
+    const response = async () => {
+      try {
+        const { data } = await axios(
+          `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${cityName}`
+        );
+        setWeatherData(data);
+        console.log(data);
+      } catch (error) {
+        console.error("api weatherKey error: ", weatherKey);
+      }
+    };
+    response();
+  }, [cityName]);
 
   return (
     <div className="grid grid-cols-2 w-screen h-screen">
-      <ShowDayTime cityName={cityName} setCityName={setCityName} />
-      <ShowNightTime />
+      <ShowDayTime
+        cityName={cityName}
+        setCityName={setCityName}
+        weatherData={weatherData}
+      />
+      <ShowNightTime weatherData={weatherData} />
     </div>
   );
 };

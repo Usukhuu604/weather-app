@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    WEATHERAPIKEY: process.env.WEATHERAPIKEY,
+    WEATHER_API_KEY: process.env.WEATHER_API_KEY,
   },
 };
 
