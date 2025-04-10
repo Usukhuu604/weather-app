@@ -3,10 +3,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Search } from "./components/Search";
 import { ShowDayTime } from "./components/ShowDayTime";
 import { ShowNightTime } from "./components/ShowNightTime";
-import { CitySuggestion } from "./components/CitySuggestion";
 
 import styles from "@/app/styles/page.module.css";
 
@@ -19,7 +17,6 @@ const HomePage = () => {
   //   const response = async () => {
   //     try {
   //       const { data } = await axios(
-  //         // "https://countriesnow.space/api/v0.1/countries"
   //         `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${cityName}`
   //       );
   //       console.log({ data });
@@ -31,10 +28,8 @@ const HomePage = () => {
   // }, []);
 
   return (
-    <div className={styles.homepage}>
-      <Search cityName={cityName} setCityName={setCityName} />
-      <CitySuggestion />
-      <ShowDayTime />
+    <div className="grid grid-cols-2 w-screen h-screen">
+      <ShowDayTime cityName={cityName} setCityName={setCityName} />
       <ShowNightTime />
     </div>
   );

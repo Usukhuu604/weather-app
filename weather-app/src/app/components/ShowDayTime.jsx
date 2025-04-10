@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "@/app/styles/page.module.css";
+import { Search } from "./Search";
 
-export const ShowDayTime = () => {
+export const ShowDayTime = ({ cityName, setCityName }) => {
   return (
     <div className={styles.portrayDay}>
+      <Search cityName={cityName} setCityName={setCityName} />
       <div className={styles.weatherInfoRendering}>
         <p>date</p>
         <p>city name</p>
