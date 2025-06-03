@@ -3,26 +3,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-export const Search = ({ cityName, setCityName }) => {
+export const Search = ({ setCityName }) => {
   const [input, setInput] = useState("");
   const [countryData, setCountryData] = useState([]);
   const [foundCities, setFoundCities] = useState([]);
 
   const handleCity = (event) => {
-    const value = event.target.value.toLowerCase();
+    const value = event.target.value;
     setInput(value);
-    const filteredCities = countryData.filter((cityName) =>
-      cityName.toLowerCase().startsWith(value)
-    );
+    const filteredCities = countryData.filter((cityName) => cityName.toLowerCase().startsWith(value.toLowerCase()));
     setFoundCities(filteredCities.slice(0, 3));
   };
 
   useEffect(() => {
     const response = async () => {
       try {
-        const { data } = await axios(
-          "https://countriesnow.space/api/v0.1/countries"
-        );
+        const { data } = await axios("https://countriesnow.space/api/v0.1/countries");
 
         const countryAndCities = data.data.map((obj) => {
           return { country: obj.country, cities: obj.cities };
@@ -47,30 +43,31 @@ export const Search = ({ cityName, setCityName }) => {
   };
 
   return (
-    <div className="absolute top-10 left-10 w-[500px]">
-      <div className="flex items-center border border-gray-300 rounded-full px-5 py-4 bg-white shadow-lg">
-        <img src="search.svg" alt="search" className="w-5 h-5 mr-3" />
-
+    <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[340px] z-50">
+      <div className="flex items-center border border-gray-200 rounded-full px-5 py-3 bg-white shadow">
+        <img src="/search.svg" alt="search" className="w-5 h-5 mr-3" />
         <input
           type="text"
           placeholder="Search"
           onChange={handleCity}
           value={input}
-          className="w-[100%]"
+          className="w-full bg-transparent outline-none border-none text-base"
         />
       </div>
-
       {foundCities.length !== 0 ? (
-        <div className="mt-3 ml-8 space-y-2">
+        <div className="rounded-xl shadow mt-2 absolute w-full bg-white border border-gray-200 py-2">
           {foundCities.map((city, index) => {
             return (
-              <p
+              <div
                 onClick={() => selectCity(city)}
                 key={index}
-                className=" px-4 py-2 rounded-full border border-gray-400 bg-white hover:bg-gray-100"
+                className="px-6 py-2 cursor-pointer flex items-center text-base hover:bg-gray-100"
               >
+                <span role="img" aria-label="location" className="mr-2">
+                  📍
+                </span>
                 {city}
-              </p>
+              </div>
             );
           })}
         </div>
