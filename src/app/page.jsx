@@ -11,12 +11,14 @@ const HomePage = () => {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    const weatherKey = process.env.WEATHER_API_KEY;
+    // const weatherKey = process.env.WEATHER_API_KEY;
+    const weatherKey = "ebacd8858fe4435fb7774004250306";
 
     const response = async () => {
       try {
         const { data } = await axios(`https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${cityName}`);
         setWeatherData(data);
+        return;
       } catch (error) {
         console.error("api weatherKey error: ", weatherKey);
       }

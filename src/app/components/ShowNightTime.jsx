@@ -40,7 +40,7 @@ export const ShowNightTime = ({ weatherData }) => {
         </div>
 
         <img src={`/${weatherImg}`} alt="weather icon" className="w-32 h-32 my-6 object-contain" />
-        <div className="text-5xl font-bold text-white mb-2">{showCurrentTemp ? `${showCurrentTemp}°` : "--"}</div>
+        <div className="text-6xl font-bold text-white mb-2">{showCurrentTemp ? `${showCurrentTemp}°` : "--"}</div>
         <div className="text-lg text-indigo-300 mb-6">{forecast}</div>
 
         <div className="w-full flex justify-around items-center mt-4 gap-4">
