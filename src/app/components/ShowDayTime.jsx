@@ -42,7 +42,7 @@ export const ShowDayTime = ({ cityName, setCityName, weatherData }) => {
         </div>
 
         <img src={`/${weatherImg}`} alt="weather icon" className="w-32 h-32 my-6 object-contain" />
-        <div className="text-5xl font-bold text-gray-900 mb-2">{showCurrentTemp ? `${showCurrentTemp}°` : "--"}</div>
+        <div className="text-6xl font-bold text-gray-900 mb-2">{showCurrentTemp ? `${showCurrentTemp}°` : "--"}</div>
         <div className="text-lg text-orange-400 mb-6">{forecast}</div>
         <div className="w-full flex justify-around items-center mt-4 gap-4">
           <House size={24} className="text-gray-900 cursor-pointer" />
