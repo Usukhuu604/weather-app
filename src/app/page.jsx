@@ -11,8 +11,7 @@ const HomePage = () => {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    // const weatherKey = process.env.WEATHER_API_KEY;
-    const weatherKey = "ebacd8858fe4435fb7774004250306";
+    const weatherKey = process.env.WEATHER_API_KEY;
 
     const response = async () => {
       try {
@@ -23,6 +22,7 @@ const HomePage = () => {
         console.error("api weatherKey error: ", weatherKey);
       }
     };
+
     response();
   }, [cityName]);
 
