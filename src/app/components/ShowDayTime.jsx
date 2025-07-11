@@ -33,9 +33,9 @@ export const ShowDayTime = ({ cityName, setCityName, weatherData }) => {
   const weatherImg = getDayWeatherImage(forecast);
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full flex-1  justify-center bg-white relative">
       <Search cityName={cityName} setCityName={setCityName} />
-      <div className="relative z-10 bg-white/40 rounded-3xl shadow-xl flex flex-col items-center justify-between p-8 w-[90%] md:w-[50%] h-auto md:h-[70vh] my-8 backdrop-blur-[24px]">
+      <div className="relative z-10 bg-white/40 rounded-3xl shadow-xl flex flex-col items-center justify-between p-8 w-[90%] md:w-[50%] h-auto md:h-[70vh] md:mt-8 mb-8 mt-28 backdrop-blur-[24px]">
         <div className="w-full flex flex-col items-start mb-4">
           <span className="text-gray-400 text-base mb-1">{showDate}</span>
           <span className="text-2xl font-bold text-gray-900">{showCityName}</span>

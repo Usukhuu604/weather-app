@@ -32,7 +32,7 @@ export const ShowNightTime = ({ weatherData }) => {
   const weatherImg = getNightWeatherImage(forecast);
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full flex-1 justify-center bg-[#10131c] relative">
       <div className="relative z-10 bg-[#23243a]/75 rounded-3xl shadow-xl flex flex-col items-center justify-between p-8 w-[90%] md:w-[50%] h-auto md:h-[70vh] my-8 text-white backdrop-blur-sm">
         <div className="w-full flex flex-col items-start mb-4">
           <span className="text-gray-400 text-base mb-1">{showDate}</span>
