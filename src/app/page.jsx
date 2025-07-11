@@ -27,11 +27,11 @@ const HomePage = () => {
   }, [cityName]);
 
   return (
-    <div className="flex w-full h-screen  overflow-hidden bg-gray-200 md:flex-row flex-col">
+    <div className="flex w-full h-screen bg-gray-200 md:flex-row flex-col">
       <div className="flex-1 flex items-center justify-center bg-white relative">
         <ShowDayTime cityName={cityName} setCityName={setCityName} weatherData={weatherData} />
       </div>
-      <div className="absolute w-30 h-30 bg-white top-1/2 left-1/2 z-10 translate-x-[-50%] translate-y-[-50%] rounded-full flex items-center justify-center gap-4">
+      <div className="hidden md:flex absolute w-30 h-30 bg-white top-1/2 left-1/2 z-10 translate-x-[-50%] translate-y-[-50%] rounded-full items-center justify-center gap-4">
         <img src="Vector.png" alt="" className="w-10 h-20 rotate-180" />
         <img src="Vector.png" alt="" className="w-10 h-20" />
       </div>

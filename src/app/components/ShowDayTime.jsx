@@ -35,7 +35,7 @@ export const ShowDayTime = ({ cityName, setCityName, weatherData }) => {
   return (
     <div className="flex flex-col items-center w-full">
       <Search cityName={cityName} setCityName={setCityName} />
-      <div className="relative z-10 bg-white/40 rounded-3xl shadow-xl flex flex-col items-center justify-between p-8 w-[50%] h-[70vh] mt-8 backdrop-blur-[24px]">
+      <div className="relative z-10 bg-white/40 rounded-3xl shadow-xl flex flex-col items-center justify-between p-8 w-[90%] md:w-[50%] h-auto md:h-[70vh] my-8 backdrop-blur-[24px]">
         <div className="w-full flex flex-col items-start mb-4">
           <span className="text-gray-400 text-base mb-1">{showDate}</span>
           <span className="text-2xl font-bold text-gray-900">{showCityName}</span>
